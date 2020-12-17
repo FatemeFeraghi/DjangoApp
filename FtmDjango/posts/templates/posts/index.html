@@ -1,0 +1,14 @@
+{% extends 'posts/layout.html' %}
+
+{% block content %}    
+										<!-- Display the Page Title Latest Post -->
+<h3 class="center-align red lighten-3">Latest Post</h3>
+<ul class="collection">
+    <!-- Retrieve all the post from database-->	
+	<!-- -->
+	{% for post in posts %}						<!-- Display the post title -->
+    <li class="collection-item"><a href="{% url 'posts:posts-details' post.id %}">{{ post.title }}</a></li>
+	{% endfor %}
+    <!-- -->
+</ul>
+{% endblock %}
